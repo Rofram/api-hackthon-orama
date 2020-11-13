@@ -3,11 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "nodemon ./src/index.js",
-    "knex:migrate": "knex --knexfile knexfile.js migrate:latest",
-    "knex:migrate:rollback": "knex --knexfile knexfile.js migrate:rollback"
+    "start": "node ./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -20,14 +17,10 @@
     "url": "https://github.com/Rofram/api-hackthon-orama/issues"
   },
   "homepage": "https://github.com/Rofram/api-hackthon-orama#readme",
-  "devDependencies": {
-    "nodemon": "^2.0.6"
-  },
   "dependencies": {
-    "bovespa": "^0.2.5",
+    "axios": "^0.21.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.21.12",
-    "sqlite3": "^5.0.0"
+    "mongoose": "^5.10.14"
   }
 }
