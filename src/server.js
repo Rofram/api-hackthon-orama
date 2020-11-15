@@ -1,5 +1,12 @@
 import express from 'express';
 import cors from 'cors';
+<<<<<<< HEAD:src/server.js
+=======
+import routes from './routes.js';
+import dotenv from 'dotenv';
+
+dotenv.config();
+>>>>>>> api-paulo:src/index.js
 
 const app = express();
 

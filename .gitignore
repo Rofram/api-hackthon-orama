@@ -1,2 +1,8 @@
 node_modules
+<<<<<<< HEAD
 .vscode
+=======
+.vscode
+.env
+src/config/*
+>>>>>>> api-paulo
