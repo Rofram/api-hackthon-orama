@@ -1,14 +1,9 @@
 import express from 'express';
 import cors from 'cors';
-<<<<<<< HEAD:src/server.js
-=======
 import routes from './routes.js';
-import dotenv from 'dotenv';
-
-dotenv.config();
->>>>>>> api-paulo:src/index.js
 
 const app = express();
+const port = process.env.PORT || 3333;
 
 app.use(cors());
 app.use(express.json());
@@ -19,4 +14,8 @@ app.get('/', (req, res) => {
     });
 });
 
-app.listen(80);
+app.use(routes);
+
+app.listen(port, () => {
+    console.log("App running on port " + port);
+});
