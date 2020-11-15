@@ -1,7 +1,30 @@
 import express from 'express';
 import User from '../database/models/user.js';
+import RendaFixa from '../database/models/rendaFixa.js';
 
 const userController = express.Router();
+
+userController.get('/myinvests', async (req, res, next) => {
+  const rendas = await RendaFixa.find().select('_id');
+  const invests = [
+  { type: 'acao', id: 'VALE3' },
+  { type: 'acao', id: 'B3SA3' },
+  { type: 'acao', id: 'PETR4' },
+  { type: 'acao', id: 'BBDC4' },
+  { type: 'acao', id: 'VVAR3' },
+  { type: 'acao', id: 'ITUB4' },
+  { type: 'acao', id: 'MGLU3' },
+  { type: 'acao', id: 'NTCO3' },
+  { type: 'acao', id: 'SUZB3' },
+  { type: 'acao', id: 'BBAS3' },
+  { type: 'acao', id: 'PETR3' },
+  { type: 'acao', id: 'ABEV3' }
+  ]
+
+  rendas.forEach(i => invests.push({type: 'renda', id: i._id}));
+
+  res.status(200).json(invests);
+});
 
 userController.get('/:email', async (req, res, next) => {
   const { email } = req.params;

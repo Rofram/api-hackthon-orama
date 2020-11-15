@@ -1,4 +1,4 @@
-import mongoose from '../connection';
+import mongoose from '../connection.js';
 const Schema = mongoose.Schema;
 
 const RendaFixaSchema = new Schema({
@@ -27,4 +27,4 @@ const RendaFixaSchema = new Schema({
 
 const RendaFixa = mongoose.model('RendaFixa', RendaFixaSchema);
 
-module.exports = RendaFixa;
+export default RendaFixa;
