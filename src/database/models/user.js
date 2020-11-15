@@ -1,33 +1,39 @@
-import mongoose from '../connection';
+import mongoose from '../connection.js';
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-  nome: {
-    type: String,
-    require: true
-  },
+  nome: String,
+  cpf: String,
   email: {
     type: String,
     unique: true,
-    required: true,
     lowercase: true
   },
+  celular: String,
   password: String,
-  dataNasc: {
-    type: Date,
-    require: true
-  },
-  pretendInvest: {
-    type: Number,
-    min: 0,
-    require: true
-  },
+  dataNasc: Date,
+  renda: String,
+  patrimonio: String,
+  objetivo: String,
+  quantoInvestRecente: String,
+  comoReagiriaQueda: String,
+  expRendaFixa: String,
+  expPrevidencia: String,
+  expRendaVariavel: String,
+  expDerivativos: String,
+  quaisAtivosPossui: String,
+  porcentPatrimonio: String,
+  jaInvestiuEm: String,
+  pretendeTempo: String,
   experiencia: {
     type: Number,
     min: 1,
-    max: 3,
-    require: true
+    max: 3
   },
+  formacao: String,
+  possuiAcessor: Boolean,
+  recebeWhatsapp: Boolean,
+  recebeEmail: Boolean,
   createdAt: {
     type: Date,
     default: Date.now
@@ -36,4 +42,4 @@ const UserSchema = new Schema({
 
 const User = mongoose.model('User', UserSchema);
 
-module.exports = User;
+export default User;

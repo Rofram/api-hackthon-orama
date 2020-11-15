@@ -3,11 +3,10 @@ const Schema = mongoose.Schema;
 
 const RendaFixaSchema = new Schema({
   nome: {
-    type: String,
-    require: true
+    type: String
   },
   rendimento: {
-    desc:{
+    desc: {
       type: String
     },
     porcentagemMes: {

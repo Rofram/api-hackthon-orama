@@ -1,10 +1,10 @@
 import express from 'express';
-// import userControllers from './controllers/userControllers';
+import acoesController from './controllers/acoesController.js';
+import userController from './controllers/userController.js';
 
 const routes = express.Router();
 
-// routes.get('/user', userController.index);
-// routes.post('/user', userControllers.create);
-
+routes.use('/acao', acoesController);
+routes.use('/user', userController);
 
 export default routes;
