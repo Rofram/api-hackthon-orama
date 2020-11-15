@@ -1,12 +1,11 @@
-import knex from 'knex';
-import path from 'path';
+import mongoose from 'mongoose';
 
-const db = knex({
-    client: 'sqlite3',
-    connection: {
-        filename: path.resolve(__dirname, 'database.sqlite3')
-    },
-    useNullAsDefault: true,
+mongoose.connect(process.env.DB_CONN_STRING, { 
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
 });
 
-export default db;
+mongoose.Promise = global.Promise;
+
+export default mongoose;
